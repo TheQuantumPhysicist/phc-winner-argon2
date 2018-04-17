@@ -48,18 +48,18 @@ extern "C" {
 #define ARGON2_MAX_MEMORY_BITS                                                 \
     ARGON2_MIN(UINT32_C(32), (sizeof(void *) * CHAR_BIT - 10 - 1))
 #define ARGON2_MAX_MEMORY                                                      \
-    ARGON2_MIN(UINT32_C(0xFFFFFFFF), UINT64_C(1) << ARGON2_MAX_MEMORY_BITS)
+    ARGON2_MIN(UINT32_C(0xFFFFFFF0), UINT64_C(1) << ARGON2_MAX_MEMORY_BITS)
 
 /* Minimum and maximum number of passes */
 #define ARGON2_MIN_TIME UINT32_C(1)
 #define ARGON2_MAX_TIME UINT32_C(0xFFFFFFFF)
 
 /* Minimum and maximum password length in bytes */
-#define ARGON2_MIN_PWD_LENGTH UINT32_C(0)
+#define ARGON2_MIN_PWD_LENGTH UINT32_C(1)
 #define ARGON2_MAX_PWD_LENGTH UINT32_C(0xFFFFFFFF)
 
 /* Minimum and maximum associated data length in bytes */
-#define ARGON2_MIN_AD_LENGTH UINT32_C(0)
+#define ARGON2_MIN_AD_LENGTH UINT32_C(1)
 #define ARGON2_MAX_AD_LENGTH UINT32_C(0xFFFFFFFF)
 
 /* Minimum and maximum salt length in bytes */
@@ -67,7 +67,7 @@ extern "C" {
 #define ARGON2_MAX_SALT_LENGTH UINT32_C(0xFFFFFFFF)
 
 /* Minimum and maximum key length in bytes */
-#define ARGON2_MIN_SECRET UINT32_C(0)
+#define ARGON2_MIN_SECRET UINT32_C(1)
 #define ARGON2_MAX_SECRET UINT32_C(0xFFFFFFFF)
 
 #define ARGON2_FLAG_CLEAR_PASSWORD (UINT32_C(1) << 0)
